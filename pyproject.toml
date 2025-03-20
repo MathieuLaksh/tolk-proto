@@ -1,0 +1,24 @@
+[project]
+name = "tolk-proto"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Mathieu Laksh"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard] (>=0.115.11,<0.116.0)",
+    "pydantic (>=2.10.6,<3.0.0)",
+    "sentence-transformers (>=3.4.1,<4.0.0)",
+    "tqdm (>=4.67.1,<5.0.0)",
+    "pymupdf (>=1.25.4,<2.0.0)",
+    "numpy (>=2.2.4,<3.0.0)",
+    "scikit-learn (>=1.6.1,<2.0.0)",
+    "keybert (>=0.9.0,<0.10.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
