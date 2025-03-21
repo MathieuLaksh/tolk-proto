@@ -15,7 +15,7 @@ Ensure you have [Poetry](https://python-poetry.org/) installed on your system.
 
 2. Initialize the "database":
     ```bash
-    poetry run app/embed_knowledge.py
+    poetry run python app/embed_knowledge.py
     ```
 
 3. Start the development server:
@@ -25,7 +25,12 @@ Ensure you have [Poetry](https://python-poetry.org/) installed on your system.
 
 3. Fill up the out-of-scope "database" through the API (don't close the server!):
     ```bash
-    poetry run app/user_log_upload.py
+    poetry run python app/user_log_upload.py
+    ```
+
+4. Execute the streamlit app with:
+    ```bash
+    poetry run streamlit run streamlit_app.py
     ```
 
 ## Usage
@@ -33,3 +38,7 @@ Ensure you have [Poetry](https://python-poetry.org/) installed on your system.
 Once the server is running, you can access the API documentation at:
 
 [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+
+The streamlit app is accessible at:
+
+[http://localhost:8501/](http://localhost:8501/)

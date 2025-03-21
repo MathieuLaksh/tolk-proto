@@ -3,7 +3,10 @@ import requests
 
 # Configuration
 USER_LOGS_FILE = "data/user_logs.csv"
-CLASSIFY_ENDPOINT = "http://localhost:8000/classify"  # Update with your FastAPI server URL if different
+CLASSIFY_ENDPOINT = (
+    "http://localhost:8000/classify"  # Update with your FastAPI server URL if different
+)
+
 
 def send_user_logs_to_classify():
     """Reads user logs from the CSV file and sends them to the classify endpoint."""
@@ -14,10 +17,10 @@ def send_user_logs_to_classify():
                 question = row.get("Question utilisateur", "").strip()
                 if not question:
                     continue  # Skip empty questions
-                
+
                 # Prepare the payload
                 payload = {"question": question}
-                
+
                 # Send the request to the classify endpoint
                 try:
                     response = requests.post(CLASSIFY_ENDPOINT, json=payload)
@@ -32,6 +35,7 @@ def send_user_logs_to_classify():
         print(f"User logs file not found: {USER_LOGS_FILE}")
     except Exception as e:
         print(f"An error occurred: {e}")
+
 
 if __name__ == "__main__":
     send_user_logs_to_classify()
